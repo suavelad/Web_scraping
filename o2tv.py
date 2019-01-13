@@ -14,7 +14,7 @@ from selenium import webdriver
 # browser=webdriver.Firefox()
 def scrape():
     try:
-        lists=['The Blacklist','Riverdale', 'Blindspot','Quantico']
+        lists=['The 100','The Blacklist','Riverdale', 'Blindspot','Quantico']
 
         main_webpage= requests.get('http://o2tvseries.com')
         main_soup=bs4.BeautifulSoup(main_webpage.content,'html.parser')
@@ -65,8 +65,7 @@ def scrape():
                                         # browser.find_element_by_xpath(".//*[contains(text(),'I\'m not a robot')]").click()
                                         # browser.find_element_by_xpath("//input[@type='submit']").click
                                         browser.find_element_by_name("submit").click
-
-
+                        
 
 
 
@@ -75,21 +74,24 @@ def scrape():
 
 
                             
-                                # print(videos[0].a.text)
-                                # print(videos[0].a['href'])
+                                print(videos[0].a.text)
+                                print(videos[0].a['href'])
 
-                                # print(videos[0].a.text)
-                                # print(videos[0].a['href'])
+                                print(videos[0].a.text)
+                                print(videos[0].a['href'])
 
-                                # for season in seasons:
-                                #     print(season.a.text)
-                                #     print(season.a['href'])
+                                for season in seasons:
+                                    print(season.a.text)
+                                    print(season.a['href'])
                             
-                        # print(page.a.text)
+                        print(page.a.text)
 
                     print("***********")
+        else:
+            print ("You Do not have an update yet")        
 
     except Exception as e:
         print('The Error is : %s'%(e))
+
 
 scrape()
